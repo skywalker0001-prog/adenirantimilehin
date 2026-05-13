@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adeniran Timilehin | E-Commerce Digital Marketer</title>
+  <title>Adeniran Timilehin | Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
 
   <style>
     * {
@@ -17,270 +19,387 @@
       scroll-behavior: smooth;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
-      line-height: 1.7;
+    :root {
+      --primary: #1d4ed8;
+      --primary-light: #2563eb;
+      --bg: #020617;
+      --card: #0f172a;
+      --card-2: #111827;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 0 40px rgba(37,99,235,0.15);
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top right, rgba(37,99,235,0.15), transparent 30%), #020617;
+      color: var(--text);
+      overflow-x: hidden;
     }
 
     .container {
       width: 90%;
-      max-width: 1200px;
+      max-width: 1350px;
       margin: auto;
     }
 
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
       z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: rgba(2,6,23,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
+      height: 80px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 700;
-      color: #38bdf8;
+      font-size: 1.2rem;
+    }
+
+    .logo-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
+      gap: 35px;
     }
 
     .nav-links a {
-      color: #e2e8f0;
-      transition: 0.3s;
+      color: white;
+      text-decoration: none;
       font-size: 0.95rem;
+      position: relative;
     }
 
-    .nav-links a:hover {
-      color: #38bdf8;
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: #2563eb;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hire-btn {
+      padding: 14px 24px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: var(--shadow);
     }
 
     .hero {
-      min-height: 100vh;
-      display: flex;
+      padding-top: 150px;
+      padding-bottom: 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: center;
-      background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(30,41,59,0.85)),
-      url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1600&auto=format&fit=crop') center/cover;
     }
 
-    .hero-content {
-      max-width: 700px;
+    .hero-image {
+      background: var(--card);
+      border: 1px solid rgba(37,99,235,0.4);
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: var(--shadow);
     }
 
-    .hero h1 {
-      font-size: 3.8rem;
-      line-height: 1.2;
+    .hero-image img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(37,99,235,0.5);
+      color: #60a5fa;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .hero-content h1 {
+      font-size: 4.5rem;
+      line-height: 1;
       margin-bottom: 20px;
     }
 
-    .hero h1 span {
-      color: #38bdf8;
+    .hero-content h3 {
+      color: #3b82f6;
+      margin-bottom: 24px;
+      line-height: 1.6;
+      font-size: 1.3rem;
+      font-weight: 500;
     }
 
-    .hero p {
+    .hero-content p {
+      color: var(--muted);
+      line-height: 1.9;
       font-size: 1.05rem;
-      color: #cbd5e1;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
-    .btn-group {
+    .hero-buttons {
       display: flex;
-      gap: 15px;
+      gap: 16px;
       flex-wrap: wrap;
+      margin-bottom: 35px;
     }
 
     .btn {
-      padding: 14px 28px;
-      border-radius: 8px;
+      padding: 16px 30px;
+      border-radius: 14px;
+      text-decoration: none;
       font-weight: 600;
-      transition: 0.3s ease;
-      display: inline-block;
+      transition: 0.3s;
     }
 
-    .primary-btn {
-      background: #38bdf8;
-      color: #0f172a;
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      box-shadow: var(--shadow);
     }
 
-    .primary-btn:hover {
-      background: #0ea5e9;
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      background: transparent;
     }
 
-    .secondary-btn {
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
+    .btn:hover {
+      transform: translateY(-3px);
     }
 
-    .secondary-btn:hover {
-      background: #38bdf8;
-      color: #0f172a;
+    .socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .socials a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .socials a:hover {
+      background: #2563eb;
+      transform: translateY(-4px);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .stat-card {
+      background: linear-gradient(180deg, rgba(15,23,42,0.95), rgba(17,24,39,0.95));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 35px 25px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .stat-card:hover,
+    .service-card:hover,
+    .experience-card:hover,
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(37,99,235,0.4);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card i {
+      font-size: 2rem;
+      color: #3b82f6;
+      margin-bottom: 18px;
+    }
+
+    .stat-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .stat-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     section {
       padding: 100px 0;
     }
 
-    .section-title {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      text-align: center;
+    .section-header {
+      margin-bottom: 50px;
     }
 
-    .section-title span {
-      color: #38bdf8;
+    .section-header span {
+      color: #3b82f6;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
     }
 
-    .section-subtitle {
-      text-align: center;
-      color: #cbd5e1;
-      max-width: 700px;
-      margin: 0 auto 60px;
+    .section-header h2 {
+      font-size: 3rem;
+      margin-top: 12px;
     }
 
-    .about-grid,
+    .section-header h2 strong {
+      color: #3b82f6;
+    }
+
     .services-grid,
-    .skills-grid,
     .experience-grid,
-    .project-grid {
+    .projects-grid,
+    .tools-grid {
       display: grid;
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
     }
 
-    .about-grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      align-items: center;
+    .service-card,
+    .experience-card,
+    .project-card,
+    .tool-card {
+      background: linear-gradient(180deg, rgba(15,23,42,0.95), rgba(17,24,39,0.95));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 32px;
+      transition: 0.3s;
     }
 
-    .card {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: 0.4s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #38bdf8;
-    }
-
-    .services-grid,
-    .skills-grid,
-    .experience-grid,
-    .project-grid {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    .service-card i,
+    .tool-card i {
+      font-size: 2rem;
+      color: #3b82f6;
+      margin-bottom: 20px;
     }
 
     .service-card h3,
     .experience-card h3,
-    .project-card h3 {
-      margin-bottom: 15px;
-      color: #38bdf8;
+    .project-card h3,
+    .tool-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.3rem;
     }
 
-    .skill-tag {
-      background: #0f172a;
-      padding: 12px 16px;
-      border-radius: 10px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: 0.3s;
+    .service-card p,
+    .experience-card p,
+    .project-card p,
+    .tool-card p {
+      color: var(--muted);
+      line-height: 1.8;
     }
 
-    .skill-tag:hover {
-      background: #38bdf8;
-      color: #0f172a;
+    .experience-card ul {
+      margin-top: 18px;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    .achievement {
+      margin-top: 18px;
+      color: #3b82f6;
       font-weight: 600;
     }
 
-    ul {
-      padding-left: 18px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .stat-box {
-      background: #1e293b;
-      padding: 30px;
-      text-align: center;
-      border-radius: 18px;
-    }
-
-    .stat-box h2 {
-      color: #38bdf8;
-      font-size: 2.5rem;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact-info {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .contact-box {
-      background: #1e293b;
-      padding: 20px 30px;
-      border-radius: 12px;
-    }
-
     footer {
-      padding: 30px 0;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
       text-align: center;
-      background: #020617;
-      color: #94a3b8;
+      color: var(--muted);
     }
 
-    .fade-in {
+    .reveal {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(50px);
       transition: all 0.8s ease;
     }
 
-    .fade-in.show {
+    .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
 
-    @media(max-width: 768px) {
-      .hero h1 {
-        font-size: 2.7rem;
+    @media(max-width: 1100px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
       }
 
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media(max-width: 768px) {
       .nav-links {
         display: none;
       }
 
-      section {
-        padding: 80px 0;
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -290,81 +409,92 @@
 <header>
   <div class="container">
     <nav>
-      <div class="logo">Adeniran Timilehin</div>
+      <div class="logo">
+        <div class="logo-box">AT</div>
+        <span>Adeniran Timilehin</span>
+      </div>
+
       <div class="nav-links">
-        <a href="#about">About</a>
+        <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#tools">Tools</a>
         <a href="#contact">Contact</a>
       </div>
+
+      <a href="https://wa.me/2349114910322" class="hire-btn">Hire Me</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero-content fade-in">
-    <h1>E‑Commerce <span>Digital Marketer</span></h1>
-    <p>
-      Helping e‑commerce brands increase visibility, drive qualified traffic,
-      improve conversions, and achieve sustainable digital growth through
-      data-driven marketing strategies.
-    </p>
-
-    <div class="btn-group">
-      <a href="#contact" class="btn primary-btn">Hire Me</a>
-      <a href="#projects" class="btn secondary-btn">View Portfolio</a>
-    </div>
-  </div>
-</section>
-
-<section id="about">
+<section class="hero" id="home">
   <div class="container">
-    <h2 class="section-title fade-in">About <span>Me</span></h2>
-    <p class="section-subtitle fade-in">
-      Results-driven digital marketer with expertise in e‑commerce growth,
-      social media advertising, conversion optimization, email marketing,
-      and customer acquisition strategies.
-    </p>
+    <div class="hero-grid">
 
-    <div class="about-grid">
-      <div class="card fade-in">
-        <h3>Professional Profile</h3>
+      <div class="hero-image reveal">
+        <img src="1773847039295.png" alt="Adeniran Timilehin">
+      </div>
+
+      <div class="hero-content reveal">
+        <div class="tag">E-Commerce Digital Marketer</div>
+
+        <h1>Adeniran Timilehin</h1>
+
+        <h3>
+          E-Commerce Growth Strategist |
+          Digital Marketing Specialist |
+          Conversion-Focused Brand Builder
+        </h3>
+
         <p>
-          I specialize in helping brands scale online through strategic digital marketing,
-          paid advertising, SEO, social media growth, and customer retention systems.
-          My approach combines creativity, analytics, and performance-focused execution
-          to deliver measurable business results.
+          Results-driven E-Commerce Digital Marketer with proven expertise in helping brands increase online visibility, drive qualified traffic, improve customer engagement, and generate sustainable revenue growth through strategic digital marketing campaigns.
         </p>
+
+        <div class="hero-buttons">
+          <a href="Adeniran Cv.pdf" class="btn btn-primary">Download CV</a>
+          <a href="#contact" class="btn btn-secondary">Let's Work Together</a>
+        </div>
+
+        <div class="socials">
+          <a href="https://linkedin.com/in/adenirantimilehin0001"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/timilehin.bernard/"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
       </div>
 
-      <div class="card fade-in">
-        <h3>Core Expertise</h3>
-        <ul>
-          <li>Meta & Google Advertising</li>
-          <li>Sales Funnel Optimization</li>
-          <li>Email Marketing Automation</li>
-          <li>Social Media Growth</li>
-          <li>SEO & Content Marketing</li>
-          <li>Customer Retention Campaigns</li>
-        </ul>
-      </div>
     </div>
 
-    <div class="stats fade-in">
-      <div class="stat-box">
-        <h2>4+</h2>
-        <p>Brands Managed</p>
+    <div class="stats reveal">
+      <div class="stat-card">
+        <i class="fas fa-cart-shopping"></i>
+        <h4>E-Commerce Expert</h4>
+        <p>Specialized Focus</p>
       </div>
 
-      <div class="stat-box">
-        <h2>20+</h2>
-        <p>Campaigns Executed</p>
+      <div class="stat-card">
+        <i class="fas fa-chart-line"></i>
+        <h4>ROI-Driven Strategies</h4>
+        <p>Measurable Results</p>
       </div>
 
-      <div class="stat-box">
-        <h2>95%</h2>
-        <p>Client Satisfaction</p>
+      <div class="stat-card">
+        <i class="fas fa-users"></i>
+        <h4>Multiple Platforms</h4>
+        <p>Meta, Google, TikTok & More</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fas fa-bullseye"></i>
+        <h4>Conversion Focused</h4>
+        <p>Maximizing Sales</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fas fa-rocket"></i>
+        <h4>Growth Partner</h4>
+        <p>Long-term Success</p>
       </div>
     </div>
   </div>
@@ -372,96 +502,101 @@
 
 <section id="services">
   <div class="container">
-    <h2 class="section-title fade-in">My <span>Services</span></h2>
+    <div class="section-header reveal">
+      <span>Services Offered</span>
+      <h2>What I Can Do <strong>For You</strong></h2>
+    </div>
 
     <div class="services-grid">
-      <div class="card service-card fade-in">
-        <h3>E‑Commerce Growth</h3>
-        <p>Helping online businesses scale revenue through strategic digital marketing campaigns and customer acquisition systems.</p>
+      <div class="service-card reveal">
+        <i class="fas fa-store"></i>
+        <h3>E-Commerce Store Growth</h3>
+        <p>Scale your online store with strategic marketing and customer acquisition systems.</p>
       </div>
 
-      <div class="card service-card fade-in">
+      <div class="service-card reveal">
+        <i class="fas fa-bullhorn"></i>
         <h3>Paid Advertising</h3>
-        <p>Creating and optimizing Meta, Google, and TikTok ad campaigns for conversions and ROI growth.</p>
+        <p>High-performing ad campaigns on Meta, Google and TikTok that drive traffic and sales.</p>
       </div>
 
-      <div class="card service-card fade-in">
-        <h3>Social Media Management</h3>
-        <p>Building engaging social media presence that strengthens brand authority and audience loyalty.</p>
+      <div class="service-card reveal">
+        <i class="fas fa-users"></i>
+        <h3>Social Media Brand Management</h3>
+        <p>Build authority, engage audiences and grow your brand across all social platforms.</p>
       </div>
 
-      <div class="card service-card fade-in">
+      <div class="service-card reveal">
+        <i class="fas fa-filter"></i>
+        <h3>Sales Funnel Optimization</h3>
+        <p>Optimize customer journeys to increase conversions and maximize revenue.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <i class="fas fa-envelope"></i>
         <h3>Email Marketing</h3>
-        <p>Developing automated email sequences focused on customer retention and repeat purchases.</p>
+        <p>Automated email systems that improve retention and drive repeat purchases.</p>
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title fade-in">Tools & <span>Platforms</span></h2>
-
-    <div class="skills-grid fade-in">
-      <div class="skill-tag">Meta Ads Manager</div>
-      <div class="skill-tag">Google Ads</div>
-      <div class="skill-tag">TikTok Ads</div>
-      <div class="skill-tag">Shopify</div>
-      <div class="skill-tag">WooCommerce</div>
-      <div class="skill-tag">Google Analytics</div>
-      <div class="skill-tag">Mailchimp</div>
-      <div class="skill-tag">Klaviyo</div>
-      <div class="skill-tag">WordPress</div>
-      <div class="skill-tag">Canva</div>
-      <div class="skill-tag">SEO Optimization</div>
-      <div class="skill-tag">CRM Management</div>
+      <div class="service-card reveal">
+        <i class="fas fa-magnifying-glass"></i>
+        <h3>SEO & Organic Growth</h3>
+        <p>Improve visibility and drive organic traffic with proven SEO strategies.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="experience">
   <div class="container">
-    <h2 class="section-title fade-in">Work <span>Experience</span></h2>
+    <div class="section-header reveal">
+      <span>Experience</span>
+      <h2>Companies I've <strong>Worked With</strong></h2>
+    </div>
 
     <div class="experience-grid">
-      <div class="card experience-card fade-in">
+      <div class="experience-card reveal">
         <h3>Nexora Commerce Hub</h3>
-        <p><strong>Senior E‑Commerce Digital Marketing Consultant</strong></p>
+        <p>Senior E-Commerce Digital Marketing Consultant</p>
         <ul>
-          <li>Managed high-converting ad campaigns.</li>
-          <li>Improved conversion rates through funnel optimization.</li>
-          <li>Implemented customer retention email systems.</li>
+          <li>Developed high-converting campaigns</li>
+          <li>Managed Meta & Google Ads</li>
+          <li>Optimized funnels and increased ROI</li>
         </ul>
+        <div class="achievement">Achievement: Increased sales by 120% in 6 months</div>
       </div>
 
-      <div class="card experience-card fade-in">
+      <div class="experience-card reveal">
         <h3>Veltrix Digital Stores</h3>
-        <p><strong>E‑Commerce Growth Strategist</strong></p>
+        <p>E-Commerce Growth Strategist</p>
         <ul>
-          <li>Developed social media growth strategies.</li>
-          <li>Managed influencer collaboration campaigns.</li>
-          <li>Optimized customer engagement systems.</li>
+          <li>Managed social media campaigns</li>
+          <li>Designed content & promo strategies</li>
+          <li>Drove engagement & lead generation</li>
         </ul>
+        <div class="achievement">Achievement: Grew social engagement by 85%</div>
       </div>
 
-      <div class="card experience-card fade-in">
+      <div class="experience-card reveal">
         <h3>PrimeCart Online Solutions</h3>
-        <p><strong>Digital Advertising Specialist</strong></p>
+        <p>Digital Advertising Specialist</p>
         <ul>
-          <li>Created Meta & TikTok paid ad campaigns.</li>
-          <li>Executed retargeting strategies.</li>
-          <li>Analyzed advertising performance metrics.</li>
+          <li>Created optimized paid ad campaigns</li>
+          <li>Implemented retargeting strategies</li>
+          <li>Analyzed performance & improved ROI</li>
         </ul>
+        <div class="achievement">Achievement: Improved ROAS by 150%</div>
       </div>
 
-      <div class="card experience-card fade-in">
+      <div class="experience-card reveal">
         <h3>UrbanPeak Retail Network</h3>
-        <p><strong>Social Media & Marketing Manager</strong></p>
+        <p>Social Media & E-Commerce Marketing Manager</p>
         <ul>
-          <li>Managed end-to-end digital campaigns.</li>
-          <li>Improved organic online visibility.</li>
-          <li>Built customer loyalty campaigns.</li>
+          <li>Managed end-to-end marketing operations</li>
+          <li>Built customer retention strategies</li>
+          <li>Increased brand visibility & loyalty</li>
         </ul>
+        <div class="achievement">Achievement: Increased customer retention by 60%</div>
       </div>
     </div>
   </div>
@@ -469,73 +604,104 @@
 
 <section id="projects">
   <div class="container">
-    <h2 class="section-title fade-in">Project <span>Highlights</span></h2>
+    <div class="section-header reveal">
+      <span>Project Highlights</span>
+      <h2>Featured <strong>Projects</strong></h2>
+    </div>
 
-    <div class="project-grid">
-      <div class="card project-card fade-in">
-        <h3>E‑Commerce Sales Campaign</h3>
-        <p>Implemented multi-channel marketing campaigns that improved customer engagement and online sales performance.</p>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <h3>E-Commerce Sales Campaign</h3>
+        <p>Implemented multi-channel marketing campaigns that increased customer engagement and online sales performance.</p>
       </div>
 
-      <div class="card project-card fade-in">
+      <div class="project-card reveal">
         <h3>Brand Awareness Strategy</h3>
-        <p>Developed social media strategies that strengthened brand visibility and audience interaction.</p>
+        <p>Developed content and social media strategies that strengthened online visibility and audience interaction.</p>
       </div>
 
-      <div class="card project-card fade-in">
+      <div class="project-card reveal">
         <h3>Advertising Optimization</h3>
-        <p>Improved ad performance through audience segmentation, retargeting, and conversion optimization.</p>
+        <p>Improved advertising performance through segmentation, retargeting and conversion optimization.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact">
-  <div class="container fade-in">
-    <h2 class="section-title">Contact <span>Me</span></h2>
-    <p class="section-subtitle">
-      Ready to grow your e‑commerce brand? Let’s work together.
-    </p>
+<section id="tools">
+  <div class="container">
+    <div class="section-header reveal">
+      <span>Tools & Platforms</span>
+      <h2>Tools I <strong>Use</strong></h2>
+    </div>
 
-    <div class="contact-info">
-      <div class="contact-box">
-        <h4>Email</h4>
-        <p>yourprofessionalemail@example.com</p>
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <i class="fab fa-google"></i>
+        <h3>Google Ads</h3>
+        <p>Search advertising, display campaigns and conversion optimization.</p>
       </div>
 
-      <div class="contact-box">
-        <h4>Location</h4>
-        <p>Lagos, Nigeria</p>
+      <div class="tool-card reveal">
+        <i class="fab fa-meta"></i>
+        <h3>Meta Ads</h3>
+        <p>Facebook and Instagram advertising campaigns for e-commerce growth.</p>
       </div>
 
-      <div class="contact-box">
-        <h4>LinkedIn</h4>
-        <p>linkedin.com/in/yourprofile</p>
+      <div class="tool-card reveal">
+        <i class="fab fa-shopify"></i>
+        <h3>Shopify</h3>
+        <p>E-commerce store management, optimization and growth strategy.</p>
       </div>
+
+      <div class="tool-card reveal">
+        <i class="fas fa-chart-simple"></i>
+        <h3>Google Analytics</h3>
+        <p>Campaign tracking, audience analysis and performance reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span>Contact</span>
+      <h2>Let's Build Something <strong>Great</strong></h2>
+    </div>
+
+    <div class="project-card reveal">
+      <h3>Get In Touch</h3>
+      <p>Email: adenirantimilehin0001@gmail.com</p>
+      <p>Location: UTC +1</p>
+      <p>LinkedIn: linkedin.com/in/adenirantimilehin0001</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>© 2026 Adeniran Timilehin — E‑Commerce Digital Marketer Portfolio</p>
+    <p>© 2026 Adeniran Timilehin. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-  const fadeElements = document.querySelectorAll('.fade-in');
+  const reveals = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
+  function revealOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    reveals.forEach(reveal => {
+      const top = reveal.getBoundingClientRect().top;
+
+      if(top < triggerBottom) {
+        reveal.classList.add('active');
       }
     });
-  }, {
-    threshold: 0.1
-  });
+  }
 
-  fadeElements.forEach(el => observer.observe(el));
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
 </script>
 
 </body>
